@@ -8,13 +8,34 @@ Chewbacca is a set of rake tasks that will push/pull the current directoy from/t
 * a Rakefile
 
 == Installation
-1.`gem install chewbacca`
-2. add `require 'chewbacca'` to your `Rakefile`
-3. add `include Chewbacca` to your `Rakefile`
-4. create a file named `manifest.rb`
+
+Install the gem:
+
+   gem install chewbacca
+
+Require and include it in your Rakefile (or create one)
+
+   require 'chewbacca'
+   include Chewbacca
+
+Create a file named manifest.rb, this file needs to declare three constants: MANIFEST, USER, and HOST. Example:
+
+   USER = "deploy"
+   HOST = "example.com"
+   MANIFEST = {
+      "path/to/local" => "path/to/remote"
+   }
 
 == Usage
-`rake -T` will show the added rake tasks
+
+To move the files from the left of the manifest, to the right (local to remote), run
+   
+   rake chewbacca:push
+
+To do the opposite, download the files from the right of the manifest to the left (remote to local)
+
+   rake chewbacca:pull
+
 
 == Copyright
 
