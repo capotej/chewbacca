@@ -1,17 +1,21 @@
 = chewbacca
 
-Description goes here.
+Chewbacca is a set of rake tasks that will push/pull the current directoy from/to a remote directory according to an arbitrary manifest file (manifest.rb)
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Dependencies
+* scp
+* public key authentication (unless you love typing passwords)
+* a Rakefile
+
+== Installation
+1.`gem install chewbacca`
+2. add `require 'chewbacca'` to your `Rakefile`
+3. add `include Chewbacca` to your `Rakefile`
+4. create a file named `manifest.rb`
+
+== Usage
+`rake -T` will show the added rake tasks
 
 == Copyright
 
-Copyright (c) 2010 capotej. See LICENSE for details.
+Copyright (c) 2010 Julio Capote See LICENSE for details.
